@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="shortcut icon" type="image/x-icon" href="/Pictures/favicon.ico" />
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+  
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17069243-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    </head>
+    <body dir="rtl">
+<div id="wrapper">
+	<div id="wrapper2">
+		<div id="header">
+			<div id="logo">
+				   <img src="Pictures/logo_web.png" />
+			</div>
+            
+           
+            
+			<div id="menu2"><p>
+            <font size='2' color='white'><strong>שלום <%=Session["Wname"] %></strong>|</font>
+ <%  if ((bool)Session["Admin"])
+                         {
+                             Response.Write("<a href='Change_Details.aspx' style='padding:0px 0px 0px 0px;' ><font size='2' color='white'>עדכון פרטים</font></a>");
+                         } 
+                       else
+                       {
+                   %>
+                   
+                   <a style="padding:0px 0px 0px 0px;" class="nopad" href="Update_Worker.aspx?ID=<%=Session["UserID"]%>" ><font size="2" color="white">עדכון פרטים</font></a>
+                   <%} %>
+                   </p>
+				<ul>
+                <li><a href="Shifts_next_week.aspx">סידור עבודה</a></li>
+						<li><a href="List_Of_Workers.aspx">עובדים</a></li>
+                        <%  if ((bool)Session["Admin"]){%> 
+                        <li><a href="Options.aspx">אפשרויות</a></li> <%}  %>
+                        <%if (bool.Parse(Session["Use_Jobs"].ToString())){%>
+                        <li><a href="jobs.aspx">תפקידים</a></li><%}  %>
+	    				<li> <a href="Add_Comment.aspx">הודעות</a></li>
+                    
+				</ul>
+			</div>
+		</div>
+		<!-- end #header -->
+		<div id="page" align="center">
+			
+						
+ <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+                    
+                    </asp:ContentPlaceHolder>
+
+		</div>
+		<!-- end #page -->
+	</div>
+	<!-- end #wrapper2 -->
+	<div id="footer">
+		<p>
+        <a href="Contact_logged.aspx">צור קשר</a>
+        <a href="Logoff.aspx">התנתק</a>
+        </p>
+	</div>
+</div>
+<!-- end #wrapper -->
+ 
+         </body>
+    <!-------------------------------------------------------------------------------------------------------
+
+                    </td>
+                    <td align="center"><font size='3' color='white'>  <%  if ((bool)Session["Admin"]) { Response.Write("נותרו <a href='purchase_sms.aspx' shape='rect'><font color='white'>" + Session["SMS_Left"] + " SMS</font></a> לשליחה <br><br><br>"); }%></font></td>
+                    <td width="300" style="text-align: left">
+                   <font size='4' color='white'>שלום <%=Session["Wname"] %> | </font>
+
+ <%  if ((bool)Session["Admin"])
+                         {
+                             Response.Write("<a href='Change_Details.aspx' shape='rect'><font size='4' color='white'>עדכון פרטים</font></a>");
+                         } 
+                       else
+                       {
+                   %>
+                   
+                   <a href="Update_Worker.aspx?ID=<%=Session["UserID"]%>" 
+                        shape="rect"><font size="4" color="white">עדכון פרטים</font></a>
+                   <%} %>
+                   <br /><br /><br />
+height: 15px">
+                    <center><font size="6" color="#546585"><%=Session["Cname"]%></font></center>
+
+
+                 
+                                       <%  if ((bool)Session["Admin"]){%>        
+                             <a href='Options.aspx' >אפשרויות" /></a>
+                                       <%}  %>
+                      <%if (bool.Parse(Session["Use_Jobs"].ToString()))  { %>
+                    <a href="jobs.aspx" >תפקידים" /></a>           
+                     <%} %>
+                    
+       
+                         &nbsp;</td>
+     
+                     <%  if ((bool)Session["Admin"])Response.Write("<a href ='Guide_Admin.aspx'>");
+                     else Response.Write("<a href ='Guide_Worker.aspx'>");
+                     %>
+                         מדריך שימוש
+
+
+                    
+ </
+        
+-->
+</html>

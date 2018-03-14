@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage3.master.cs" Inherits="MasterPage3" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">    
+<head id="Head2" runat="server">
+
+    <title >משמרון - סידור עבודה</title>
+   <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+        <link rel="shortcut icon" type="image/x-icon" href="/Pictures/favicon.ico" />
+        <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-17069243-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+    </script>
+    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    </head>
+<body dir="rtl">
+<div id="wrapper">
+	<div id="wrapper2">
+		<div id="header">
+			<div id="logo">
+				  <img src="Pictures/logo_web.png">
+			</div>
+
+		</div>
+		<!-- end #header -->
+		<div id="page">
+			<div align="center" >
+         
+				     <asp:ContentPlaceHolder id="ContentPlaceHolder3" runat="server">
+                    </asp:ContentPlaceHolder>
+                    
+				
+			</div>
+			<!-- end #content -->
+			
+			<!-- end #sidebar -->
+			<div style="clear: both;">&nbsp;</div>
+			
+		</div>
+		<!-- end #page -->
+	</div>
+	<!-- end #wrapper2 -->
+	<div id="footer">
+		<p>(c) עוצב ע"י <a href="http://www.free-css.co.il">עיצובים להורדה בחינם</a></p>
+	</div>
+</div>
+<!-- end #wrapper -->
+
+</body>
+</html>
+
